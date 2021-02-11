@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomePage = () => (
     <div>
-        HomePage
+       <h1> All EVs </h1>
     </div>
   );
   
