@@ -3,11 +3,29 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
+const postSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  category: {
+    type: String,
+    enum: ['Cars', 'Bikes', 'Charging', 'News', 'Stocks'],
+    required: true
+}
+})
+
+
 const userSchema = new mongoose.Schema({
   name: String,
   email: {type: String, required: true, lowercase: true, unique: true},
-  password: String
-}, {
+  password: String,
+  posts: [postSchema]
+},{
   timestamps: true
 });
 
