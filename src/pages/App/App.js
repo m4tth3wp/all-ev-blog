@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import HomePage from '../../pages/HomePage/HomePage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 import tokenService from '../../utils/tokenService';
 
 class App extends Component {
@@ -55,6 +56,9 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+          <Route exact path='/profile' render={props => 
+            <ProfilePage {...props} />
+          } />
         </Switch>
       </div>
     );
