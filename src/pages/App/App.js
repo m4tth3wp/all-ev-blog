@@ -13,7 +13,7 @@ class App extends Component {
     super();
     this.state = {
       ...this.getInitialState(),
-      // Initialize user if there's a token, otherwise null
+      posts: [],
       user: userService.getUser()
     };
   }
