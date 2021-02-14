@@ -7,6 +7,7 @@ import userService from '../../utils/userService';
 import HomePage from '../../pages/HomePage/HomePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import tokenService from '../../utils/tokenService';
+import TwitterFeed from '../../components/TwitterFeed/TwitterFeed';
 
 class App extends Component {
   constructor() {
@@ -57,9 +58,10 @@ class App extends Component {
             />
           }/>
           <Route exact path='/profile' render={props => 
-            <ProfilePage {...props} />
+            <ProfilePage {...props} user={this.state.user} />
           } />
         </Switch>
+        <TwitterFeed />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+
 const SALT_ROUNDS = 6;
 
 const postSchema = new mongoose.Schema({
