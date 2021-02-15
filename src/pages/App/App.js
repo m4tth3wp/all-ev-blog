@@ -8,6 +8,7 @@ import HomePage from '../../pages/HomePage/HomePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import tokenService from '../../utils/tokenService';
 import TwitterFeed from '../../components/TwitterFeed/TwitterFeed';
+import { subscribeToTimer } from '../../utils/socketio';
 
 class App extends Component {
   constructor() {

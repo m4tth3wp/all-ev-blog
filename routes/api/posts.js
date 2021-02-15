@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const postsCtrl = require('../../controllers/profile')
+const postsCtrl = require('../../controllers/posts')
 
 
 /*---------- Protected Routes ----------*/
 // Process the token for only the routes below
 // router.use(require('../../config/auth'));
 
-router.get('/index', postsCtrl.index);
-router.post('/new',  postsCtrl.create);
+router.get('/', postsCtrl.index);
+router.post('/',  postsCtrl.create);
  
 /*----- Helper Functions -----*/
 function checkAuth(req, res, next) {

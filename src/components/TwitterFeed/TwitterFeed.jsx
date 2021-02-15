@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import socketIOClient from "socket.io-client";
+const ENDPOINT = "http://localhost:5000";
 
+function TwitterFeed() {
+  const [response, setResponse] = useState("");
 
-class myComponent extends React.Component {
-  componentDidMount() {
-    const apiUrl = 'https://api.github.com/users/hacktivist123/repos';
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => console.log('This is your data', data));
-  }
-  render() {
-    return <h1>my Component has Mounted, Check the browser 'console' </h1>;
-  }
+  useEffect(() => {
+    const socket = socketIOClient(ENDPOINT);
+    socket.on("tweet", data => {
+      setResponse(data);
+      console.log(data)
+    });
+  }, []);
+
+  return (
+    <p>
+      It's {response}
+    </p>
+  );
 }
-export default myComponent;
+
+export default TwitterFeed;
