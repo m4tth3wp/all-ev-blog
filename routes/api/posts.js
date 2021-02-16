@@ -9,6 +9,7 @@ const postsCtrl = require('../../controllers/posts')
 
 router.get('/', postsCtrl.index);
 router.post('/',  postsCtrl.create);
+router.get('/:id', postsCtrl.detail);
  
 /*----- Helper Functions -----*/
 function checkAuth(req, res, next) {

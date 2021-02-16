@@ -24,8 +24,14 @@ async function index(req, res) {
     res.status(200).json(posts)
         }
 
+async function detail(req, res) {
+    const post = await Post.findById(req.params.id)
+    res.status(200).json(post)
+}
+
 
 module.exports = {
     create,
     index,
+    detail
 }
