@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import postService from '../../utils/postService';
 import axios from 'axios';
 
 class ProfilePage extends React.Component {
   state = {
     title: '',
-    description: ''
+    description: '',
+    category: '',
+    image: '',
   }
 
   handleChange = e => {
@@ -49,39 +50,3 @@ class ProfilePage extends React.Component {
 }
   
   export default ProfilePage;
-
-
-
-// function ProfilePage(props) {
-
-//   const submitPost = async () => {
-//     const res = await axios.post('http://localhost:3000/api/posts/')
-//     console.log(res);
-// }
-
-//    const handleSubmit = (e) => {
-//        e.preventDefault();
-//        console.log(e)
-//        postService.index()
-//    }
-
-//  return (
-//    <div className='NavBar'>
-//      <Link to='/'>HOME</Link>
-//      <header> {props.user.name} Add Post</header>
-//      <form onSubmit={submitPost}>
-//          <input type='text' name="title" placeholder="Title"></input>
-//          <input type='text' name="description" placeholder="Content"></input>
-//          {/* <select name="category">
-//            <option disabled selected>Post Category</option>
-//            <option value="Cars">Cars</option>
-//            <option value="Bikes">Bikes</option>
-//            <option value="Charging">Charging</option>
-//            <option value="News">News</option>
-//            <option value="Stocks">Stocks</option>
-//          </select> */}
-//        <button>Submit</button>
-//      </form>
-//    </div>
-//  );
-// };

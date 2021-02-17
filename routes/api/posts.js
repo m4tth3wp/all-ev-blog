@@ -5,10 +5,10 @@ const postsCtrl = require('../../controllers/posts')
 
 /*---------- Protected Routes ----------*/
 // Process the token for only the routes below
-// router.use(require('../../config/auth'));
+router.use(require('../../config/auth'));
 
 router.get('/', postsCtrl.index);
-router.post('/',  postsCtrl.create);
+router.post('/', checkAuth, postsCtrl.create);
 router.get('/:id', postsCtrl.detail);
  
 /*----- Helper Functions -----*/

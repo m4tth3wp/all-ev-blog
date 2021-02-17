@@ -12,7 +12,11 @@ const postSchema = new mongoose.Schema({
     category: {
       type: String,
       enum: ['Cars', 'Bikes', 'Charging', 'News', 'Stocks'],
-  }
+  },
+    image: {
+      type: String
+    }
+
   })
 
   module.exports = mongoose.model('Post', postSchema);
