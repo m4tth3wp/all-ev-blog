@@ -9,8 +9,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import tokenService from '../../utils/tokenService';
 import TwitterFeed from '../../components/TwitterFeed/TwitterFeed';
 import { subscribeToTimer } from '../../utils/socketio';
-import PostList from '../../components/Posts/PostList';
-import PostDetail from '../../components/PostDetail/PostDetail';
+
 
 class App extends Component {
   constructor() {
@@ -66,10 +65,7 @@ class App extends Component {
         </Switch>
 
         {/* <TwitterFeed /> */}
-        <Switch>
-        <Route path="/posts/:id" component={PostDetail} /> 
-        <PostList />
-        </Switch>
+
       </div>
     );
   }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PostListItem from './PostListItem';
 
+
 class PostList extends React.Component {
     state = {
         posts: []
@@ -20,7 +21,10 @@ class PostList extends React.Component {
     renderList() {
         return this.state.posts.map(post => {
             return (
+                <>
             <PostListItem post={post} key={post._id} />
+            </>
+            
             )
         })
     }
