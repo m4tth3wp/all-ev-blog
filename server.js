@@ -4,11 +4,6 @@ const socketIo = require('socket.io')
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const needle = require('needle');
-const config = require('dotenv').config()
-const TOKEN = process.env.TWITTER_BEARER_TOKEN
-const PORT = process.env.PORT || 5000
-const twitter = require('../project-4/routes/api/twitter');
 
 
 
@@ -30,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/posts', require('./routes/api/posts'));
+app.use('/api/tweets', require('./routes/api/tweets'));
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
@@ -41,5 +37,3 @@ const port = process.env.PORT || 3001;
 app.listen(port, function() {
   console.log(`Express app running on port ${port}`)
 });
-
-// twitter.streamTweets()

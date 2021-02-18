@@ -69,7 +69,7 @@ class App extends Component {
         <Route path="/posts/:id" component={PostDetail} /> 
         <PostList />
         </Switch>
-        {/* <TwitterFeed /> */}
+        <TwitterFeed />
 
       </div>
     );
