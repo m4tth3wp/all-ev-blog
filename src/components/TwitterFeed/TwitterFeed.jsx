@@ -12,30 +12,25 @@ class TwitterFeed extends React.Component {
     }
 
     async getTweets() {
-        const res = await axios.get('http://localhost:3000/api/tweets/')
-        this.setState({tweets: res.data});
-        console.log(res.data.data[0].text);
-    }
-
-    async renderList() {
-        const tweets = this.state.tweets.data
-        return tweets.map(tweet => {
-            console.log(tweet)
-            return (
-                <>
-            hello
-            </>
-            
-            )
-        })
+        const {data} = await axios.get('http://localhost:3000/api/tweets/')
+        if (data) {
+            const tweets = data.data
+            this.setState({tweets})
+        }
     }
 
     render() {
+        const {tweets} = this.state
         return(
         <div>
-            hello
-            
-        
+            Twitter Feed list
+            {tweets.map(tweet => {
+            return (
+                <>
+            {tweet.text}
+            </>
+            )
+        })}
         </div>)
     }
 }

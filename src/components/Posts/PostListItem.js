@@ -17,11 +17,12 @@ class PostListItem extends React.Component {
         return(
             <>
         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={post.image} />
             <Card.Body>
             <Card.Title>{post.title}</Card.Title>
             <Card.Text>
                 {post.description}
+                Category: {post.category}
             </Card.Text>
             <Button variant="primary" onClick={this.onShowPost}>Read More</Button>
             </Card.Body>

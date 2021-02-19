@@ -15,7 +15,6 @@ class PostList extends React.Component {
     async getPost() {
         const res = await axios.get('http://localhost:3000/api/posts/')
         this.setState({posts: res.data});
-        console.log(res);
     }
 
     renderList() {

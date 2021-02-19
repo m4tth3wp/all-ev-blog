@@ -30,17 +30,35 @@ class ProfilePage extends React.Component {
      <Link to='/'>HOME</Link>
      <header>  Add Post</header>
      <form onSubmit={this.handleSubmit}>
+        {/* Title */}
          <input
           type='text' 
           name="title" 
           placeholder="Title" 
           value={this.state.title}
           onChange={this.handleChange}></input>
+         {/* Description */}
          <input 
          type='text' 
          name="description" 
          placeholder="Description" 
          value={this.state.description}
+         onChange={this.handleChange}></input>
+         {/* Category */}
+        <label>Category</label>         
+         <select value={this.state.category} name='category' onChange={this.handleChange}>
+            <option value="Cars">Cars</option>
+            <option value="Bikes">Bikes</option>
+            <option value="Charging">Charging</option>
+            <option value="News">News</option>
+            <option value="Stocks">Stocks</option>
+          </select>
+        {/* Image */}
+        <input 
+         type='text' 
+         name="image" 
+         placeholder="Image" 
+         value={this.state.image}
          onChange={this.handleChange}></input>
        <button>Submit</button>
      </form>

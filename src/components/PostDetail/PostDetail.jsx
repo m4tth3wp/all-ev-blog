@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import { Link } from 'react-router-dom';
 
 class PostDetail extends React.Component {
     state = {
@@ -19,6 +20,7 @@ class PostDetail extends React.Component {
     renderPost() {
         return <div>
             {this.state.post.title}
+           <img src={this.state.post.image}></img>
             <p>{this.state.post.description}</p>
         </div>
     }
@@ -26,6 +28,7 @@ class PostDetail extends React.Component {
     render() {
         return(
         <Jumbotron>
+             <Link to='/'>HOME</Link>
             {this.renderPost()}
         </Jumbotron>)
     }
