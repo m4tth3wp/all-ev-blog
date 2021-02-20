@@ -14,7 +14,7 @@ const NavBar = (props) => {
       </Nav.Item>
       <Nav.Item as="li">
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
+      <span className='NavBar-welcome'>Welcome to All EVs, {props.user.name}</span>
       </Nav.Item>
     </Nav>
     :

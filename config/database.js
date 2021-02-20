@@ -1,9 +1,16 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/evblog', {
+// mongoose.connect('mongodb://localhost/evblog', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true
+// });
+
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 // shortcut to mongoose.connection object

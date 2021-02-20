@@ -7,11 +7,11 @@ const logger = require('morgan');
 
 
 
-// connect to the database with Mongoose
-require('./config/database');
-
 // load the env vars
 require('dotenv').config();
+
+// connect to the database with Mongoose
+require('./config/database');
 
 const app = express();
 const server = http.createServer(app)

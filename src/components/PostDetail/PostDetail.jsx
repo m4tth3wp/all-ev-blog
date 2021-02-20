@@ -13,7 +13,7 @@ class PostDetail extends React.Component {
     }
 
     async getPostDetail() {
-        const res = await axios.get(`http://localhost:3000/api/posts/${this.props.match.params.id}`)
+        const res = await axios.get(`/api/posts/${this.props.match.params.id}`)
         console.log(res)
         this.setState({post: res.data})
     }

@@ -19,7 +19,7 @@ class ProfilePage extends React.Component {
        const post = {
          title: this.state.title,
          description: this.state.description       }
-       axios.post('http://localhost:3000/api/posts/', this.state)
+       axios.post('/api/posts/', this.state)
        .then( res => {
          console.log(post)
        })

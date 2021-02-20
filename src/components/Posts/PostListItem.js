@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import './PostListItem.css'
 
 class PostListItem extends React.Component {
     constructor(props) {
@@ -16,14 +17,10 @@ class PostListItem extends React.Component {
         const {post} = this.props
         return(
             <>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '40rem' }}>
             <Card.Img variant="top" src={post.image} />
             <Card.Body>
             <Card.Title>{post.title}</Card.Title>
-            <Card.Text>
-                {post.description}
-                Category: {post.category}
-            </Card.Text>
             <Button variant="primary" onClick={this.onShowPost}>Read More</Button>
             </Card.Body>
             </Card>

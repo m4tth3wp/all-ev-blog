@@ -6,9 +6,6 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import HomePage from '../../pages/HomePage/HomePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import tokenService from '../../utils/tokenService';
-import TwitterFeed from '../../components/TwitterFeed/TwitterFeed';
-import { subscribeToTimer } from '../../utils/socketio';
 import PostList from '../../components/Posts/PostList';
 import PostDetail from '../../components/PostDetail/PostDetail';
 
@@ -40,8 +37,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <header className='header-footer'>All EVs</header>
+      <div className="App">
+        <header className='header-footer'><h1>All EVs</h1></header>
         <Switch>
           <Route exact path='/' render={() =>
             <HomePage
@@ -67,9 +64,9 @@ class App extends Component {
         </Switch>
         <Switch>
         <Route path="/posts/:id" component={PostDetail} /> 
-        <PostList />
+        
         </Switch>
-        <TwitterFeed />
+        
 
       </div>
     );

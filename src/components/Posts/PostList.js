@@ -13,7 +13,7 @@ class PostList extends React.Component {
     }
 
     async getPost() {
-        const res = await axios.get('http://localhost:3000/api/posts/')
+        const res = await axios.get('/api/posts/')
         this.setState({posts: res.data});
     }
 
@@ -31,6 +31,7 @@ class PostList extends React.Component {
     render() {
         return(
         <div>
+            <h3>Articles</h3>
             {this.renderList()}
         </div>)
     }

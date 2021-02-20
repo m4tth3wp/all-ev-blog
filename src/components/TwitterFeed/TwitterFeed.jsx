@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Tweet from '../Tweet/Tweet'
+import './TwitterFeed.css';
 
 
 class TwitterFeed extends React.Component {
@@ -12,7 +14,7 @@ class TwitterFeed extends React.Component {
     }
 
     async getTweets() {
-        const {data} = await axios.get('http://localhost:3000/api/tweets/')
+        const {data} = await axios.get('/api/tweets/')
         if (data) {
             const tweets = data.data
             this.setState({tweets})
@@ -23,11 +25,11 @@ class TwitterFeed extends React.Component {
         const {tweets} = this.state
         return(
         <div>
-            Twitter Feed list
+            <h3>Twitter Feed</h3>
             {tweets.map(tweet => {
             return (
                 <>
-            {tweet.text}
+            <Tweet tweet={tweet}/>
             </>
             )
         })}
