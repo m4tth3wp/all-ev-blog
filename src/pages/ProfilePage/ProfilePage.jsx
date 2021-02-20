@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Form from 'react-bootstrap/Form'
+import './ProfilePage.css';
 
 class ProfilePage extends React.Component {
   state = {
@@ -19,6 +21,7 @@ class ProfilePage extends React.Component {
        const post = {
          title: this.state.title,
          description: this.state.description       }
+         this.props.history.push('/');
        axios.post('/api/posts/', this.state)
        .then( res => {
          console.log(post)
@@ -26,24 +29,26 @@ class ProfilePage extends React.Component {
    }
   render() {
     return(
-    <div className='NavBar'>
+    <>
+      <div className='NavBar'>
      <Link to='/'>HOME</Link>
+     </div>
      <header>  Add Post</header>
-     <form onSubmit={this.handleSubmit}>
+     <Form onSubmit={this.handleSubmit}>
         {/* Title */}
-         <input
+         <Form.Control
           type='text' 
           name="title" 
           placeholder="Title" 
           value={this.state.title}
-          onChange={this.handleChange}></input>
+          onChange={this.handleChange}/>
          {/* Description */}
-         <input 
+         <Form.Control 
          type='text' 
          name="description" 
          placeholder="Description" 
          value={this.state.description}
-         onChange={this.handleChange}></input>
+         onChange={this.handleChange}/>
          {/* Category */}
         <label>Category</label>         
          <select value={this.state.category} name='category' onChange={this.handleChange}>
@@ -54,15 +59,15 @@ class ProfilePage extends React.Component {
             <option value="Stocks">Stocks</option>
           </select>
         {/* Image */}
-        <input 
+        <Form.Control 
          type='text' 
          name="image" 
          placeholder="Image" 
          value={this.state.image}
-         onChange={this.handleChange}></input>
+         onChange={this.handleChange}/>
        <button>Submit</button>
-     </form>
-   </div>
+     </Form>
+   </>
     )
   }
 }

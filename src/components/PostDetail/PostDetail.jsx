@@ -18,11 +18,11 @@ class PostDetail extends React.Component {
         this.setState({post: res.data})
     }
     renderPost() {
-        return <div>
-            {this.state.post.title}
-           <img src={this.state.post.image}></img>
-            <p>{this.state.post.description}</p>
-        </div>
+        return <>
+           <h2 style={{color: "black"}} >{this.state.post.title} </h2>
+           <div><img style={{maxWidth:'50%'}} src={this.state.post.image}></img></div>
+            <p style={{fontFamily: "Calibri", color:"black"}}>{this.state.post.description}</p>
+        </>
     }
 
     render() {
